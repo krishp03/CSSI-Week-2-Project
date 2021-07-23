@@ -1,13 +1,13 @@
+
 const addWorkout = 
 () => {
-    const passcodeIn = document.querySelector("#passcode").value;
+    const userWorkout = document.querySelector("#user-in").value;
 
     console.log(passcodeIn);
-    console.log(messageIn);
 
     const payload = {
-        passcode: passcodeIn,
-        message: messageIn
+        workout: userWorkout,
     };
-    firebase.database().ref().push(payload);
+    firebase.database().ref().workout.gym.push(payload);
+
 }
