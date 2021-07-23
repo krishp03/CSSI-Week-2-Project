@@ -1,3 +1,6 @@
+
+
+
 console.log("script running")
 const addWorkout = 
 () => {
@@ -8,7 +11,22 @@ const addWorkout =
     const payload = {
         workout: userWorkout,
     };
-    const ref = firebase.database().ref().workouts;
-    console.log(ref)
+    const ref = firebase.database().ref("/workouts/gym");
+    console.log(ref.on("value", (snapshot) =>
+    {
+
+    }))
 
 }
+
+
+const handleSubmitSurvey = () =>
+{
+
+}
+
+
+
+
+
+
