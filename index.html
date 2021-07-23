@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Workout Generator!</title>
+    <link
+      rel="shortcut icon"
+      href="../images/fav_icon.png"
+      type="image/x-icon"
+    />
+    <!-- Bulma Version 0.9.0-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="/__/firebase/8.2.6/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.8.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.8.0/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+  </head>
+
+  <body id="body">
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="columns is-8 is-variable ">
+            <div class="column is-two-thirds has-text-left">
+              <h1 class="title is-1">Workout Generator</h1>
+            </div>
+
+            <!-------------------------------------- WORKOUT SURVEY -------------------------------------->
+            <div class="column is-one-third has-text-left">
+              <div class="field">
+                <label class="label">Type of Workout</label>
+                <div class="control">
+                  <select id="workout-type" name="workout-type">
+                    <option value="push">Push</option>
+                    <option value="pull">Pull</option>
+                    <option value="legs">Legs</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="label">Do you have access to a commercial gym?</p>
+                <input type="radio" name="series" value="true" />
+                <label for="series">Yes</label><br />
+                <input type="radio" name="series" value="false" />
+                <label for="no_series">No</label><br />
+              </div>
+
+              <div class="field">
+                <label class="label"
+                  >How many different exercises would you like</label
+                >
+                <div class="control">
+                  <select id="emotion" name="emotion">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="control">
+                <button
+                  class="button is-link is-fullwidth has-text-weight-medium is-medium"
+                  id="surveySubmit"
+                  onclick="handleSubmitSurvey()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/dbConnection.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
