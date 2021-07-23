@@ -52,7 +52,7 @@
             <div class="column is-one-third has-text-left">
               <div class="field">
                 <p class="label">Do you have access to a commercial gym?</p>
-                <input type="radio" name="series" value="true" />
+                <input type="radio" name="series" value="true" id="gym"/>
                 <label for="series">Yes</label><br />
                 <input type="radio" name="series" value="false" />
                 <label for="no_series">No</label><br />
@@ -94,8 +94,7 @@
                 <button
                   class="button is-link is-fullwidth has-text-weight-medium is-medium"
                   id="surveySubmit"
-                  onclick="handleSubmitSurvey()"
-                >
+                  onclick="handleSubmitSurvey()">
                   Submit
                 </button>
               </div>

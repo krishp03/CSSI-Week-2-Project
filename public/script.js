@@ -18,21 +18,25 @@ const addWorkout =
 }
 
 
+
 const handleSubmitSurvey = () =>
 {
-    const ref = firebase.database().ref("/workouts/gym");
+    if(document.querySelector("#gym").checked)
+        ref = firebase.database().ref("/workouts/gym");
+    else
+        ref = firebase.database().ref("/workouts/non-gym");
 
     ref.on("value", (snapshot) => {
         const data = snapshot.val()
 
-        for(let key in data)
-        {
-            console.log(data[key])
+        for(let key in data){
             document.querySelector("#list").innerHTML += `<p> ${data[key]} </p>`;
         }
         
     })
 }
+
+
 
 
 
