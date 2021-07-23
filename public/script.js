@@ -11,18 +11,27 @@ const addWorkout =
     const payload = {
         workout: userWorkout,
     };
-    const ref = firebase.database().ref("/workouts/gym");
-    console.log(ref.on("value", (snapshot) =>
-    {
+    
 
-    }))
+    
 
 }
 
 
 const handleSubmitSurvey = () =>
 {
+    const ref = firebase.database().ref("/workouts/gym");
 
+    ref.on("value", (snapshot) => {
+        const data = snapshot.val()
+
+        for(let key in data)
+        {
+            console.log(data[key])
+            
+        }
+        
+    })
 }
 
 
