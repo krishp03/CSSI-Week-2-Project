@@ -28,7 +28,7 @@ const handleSubmitSurvey = () =>
         for(let key in data)
         {
             console.log(data[key])
-            
+            document.querySelector("#list").innerHTML += `<p> ${data[key]} </p>`;
         }
         
     })
